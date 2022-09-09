@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/da8a1d6941.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container-lg">
+      <header class="text-center text-light my-4">
+        <h1 class="mb-4">Todo List</h1>
+      </header>
+      <form
+        class="add text-center  p-3 rounded-2 mb-4 d-flex flex-column align-items-center justify-content-around"
+      >
+        <div class="w-100 mb-2">
+          <label class="text-light mb-3">Add todo's title :</label>
+          <input
+            class="form-control m-auto w-100"
+            type="text"
+            name="add"
+            placeholder="doing Quera's task "
+          />
+        </div>
+        <div class="w-100 mb-3">
+          <label class="text-light m-auto  mb-3">Add todo's description :</label>
+          <input
+            class="form-control m-auto "
+            type="text"
+            name="add"
+            placeholder="doing Quera's task "
+          />
+        </div>
+
+        <button type="submit  " class="btn btn-primary m-auto w-50 bg-blue">
+          submit
+        </button>
+      </form>
+
+      <ul class="list-group todos mx-auto text-light">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>play mariokart</span>
+          <i class="far fa-trash-alt delete"></i>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>defeat ganon in zelda</span>
+          <i class="far fa-trash-alt delete"></i>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>make a veggie pie</span>
+          <i class="far fa-trash-alt delete"></i>
+        </li>
+      </ul>
+    </div>
+    <script src="./index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
