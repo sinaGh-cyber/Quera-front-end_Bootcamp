@@ -1,23 +1,52 @@
-body{
-    background: #352f5b;
-  }
-  .add{
-    background-color: #473d97;
-  }
-  .container{
-    max-width: 400px;
-  }
-  input[type=text],
-  input[type=text]:focus{
-    color: #fff;
-    border: none;
-    background: rgba(0,0,0,0.2);
-    /* max-width: 400px; */
-  }
-  .todos li{
-    background: #423a6f;
-    color: #fff;
-  }
-  .delete{
-    cursor: pointer;
-  }
+body {
+  background: #352f5b;
+}
+.add {
+  background-color: #473d97;
+}
+.container {
+  max-width: 400px;
+}
+input[type='text'],
+input[type='text']:focus {
+  color: #fff;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  max-width: 400px;
+}
+.descriptionInput,
+.descriptionInput:focus {
+  color: #fff;
+  border: none;
+  resize: none;
+  height: 8rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.todos li {
+  background: #4b3c9e;
+  color: #fff;
+}
+.delete {
+  cursor: pointer;
+}
+
+.descriptionTodo,
+.titleTodo {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.toastSuccessBody {
+  background-color: rgb(194, 255, 194);
+  color: green;
+}
+.toastInfoBody {
+  background-color: rgb(172, 255, 255);
+  color: rgb(0, 66, 96);
+}
+.completed {
+  background-color: #423a6f !important;
+  text-decoration: line-through;
+}
