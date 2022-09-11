@@ -19,54 +19,270 @@
   </head>
   <body>
     <div class="container-lg">
+      <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div
+          id="toastSuccess"
+          class="toast overflow-hidden rounded-2"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header bg-success text-light">
+            <i class="fa-solid fa-hexagon-check"></i>
+
+            <strong class="me-auto">Success</strong>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body toastSuccessBody">
+            Task successfully added to todo list.
+          </div>
+        </div>
+
+        <div
+          id="toastWarningForm"
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header bg-warning text-light">
+            <i class="fa-solid fa-hexagon-check"></i>
+
+            <strong class="me-auto">something is wrong</strong>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body">Task title is mandatory!</div>
+        </div>
+
+
+        <div
+        id="toastEdited"
+        class="toast overflow-hidden rounded-2"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header bg-info text-light">
+          <i class="fa-solid fa-hexagon-check"></i>
+  
+          <strong class="me-auto">Task edited</strong>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body toastInfoBody toastInfoBody">
+          Task successfully edited and changes applied.
+        </div>
+      </div>
+
+        <div
+          id="toastInfo"
+          class="toast overflow-hidden rounded-2"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header bg-info text-light">
+            <i class="fa-solid fa-hexagon-check"></i>
+
+            <strong class="me-auto">Task removed</strong>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body toastInfoBody toastInfoBody">
+            Task successfully removed from todo list.
+          </div>
+        </div>
+      </div>
+
+
+
+  </div>
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Editing task</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="title-name" class="col-form-label">Title:</label>
+                  <input type="text" class="form-control" id="title-name" />
+                </div>
+                <div class="mb-3">
+                  <label for="description-text" class="col-form-label"
+                    >Description:</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="description-text"
+                  ></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                id="modalClosingBtn"
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                id="modalSaveChangesBtn"
+                type="button"
+                class="btn btn-primary"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <header class="text-center text-light my-4">
         <h1 class="mb-4">Todo List</h1>
       </header>
       <form
-        class="add text-center  p-3 rounded-2 mb-4 d-flex flex-column align-items-center justify-content-around"
+        class="add text-center p-3 rounded-2 mb-4 d-flex flex-column align-items-center justify-content-around todoForm"
       >
-        <div class="w-100 mb-2">
+        <div class="w-75 mb-2">
           <label class="text-light mb-3">Add todo's title :</label>
           <input
-            class="form-control m-auto w-100"
+            class="form-control m-auto w-100 titleInput"
             type="text"
             name="add"
             placeholder="doing Quera's task "
           />
         </div>
-        <div class="w-100 mb-3">
-          <label class="text-light m-auto  mb-3">Add todo's description :</label>
-          <input
-            class="form-control m-auto "
+        <div class="w-75 mb-3">
+          <label class="text-light m-auto mb-3">Add todo's description :</label>
+          <textarea
+            class="form-control m-auto descriptionInput"
             type="text"
             name="add"
-            placeholder="doing Quera's task "
-          />
+            placeholder="TodoList project, dead line 29 jun "
+          ></textarea>
         </div>
 
-        <button type="submit  " class="btn btn-primary m-auto w-50 bg-blue">
+        <button
+          id="addToastBtn"
+          type="submit  "
+          class="btn btn-primary m-auto w-50 bg-blue"
+        >
           submit
         </button>
       </form>
 
       <ul class="list-group todos mx-auto text-light">
         <li
-          class="list-group-item d-flex justify-content-between align-items-center"
+          id="1"
+          class="list-group-item d-flex gap-2 justify-content-between align-items-center"
         >
-          <span>play mariokart</span>
-          <i class="far fa-trash-alt delete"></i>
+          <span class="w-25 titleTodo">make a veggie pie</span>
+          <span class="w-50 descriptionTodo">without description</span>
+          <div class="w-25 btn-group">
+            <button class="border-0 bg-transparent text-light">
+              <i class="far fa-trash-alt delete p-1"></i>
+            </button>
+            <button class="border-0 bg-transparent text-light">
+              <i class="fa-solid fa-check toggle done p-1"></i>
+              <i
+                class="fa-sharp fa-solid fa-rotate-left toggle undo visually-hidden p-1"
+              ></i>
+            </button>
+            <button
+              class="border-0 bg-transparent text-light"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              <i class="fa-solid fa-pen-to-square edit p-1"></i>
+            </button>
+          </div>
         </li>
+
         <li
-          class="list-group-item d-flex justify-content-between align-items-center"
+          id="2"
+          class="list-group-item d-flex gap-2 justify-content-between align-items-center"
         >
-          <span>defeat ganon in zelda</span>
-          <i class="far fa-trash-alt delete"></i>
+          <span class="w-25 titleTodo">make a veggie pie</span>
+          <span class="w-50 descriptionTodo">without description</span>
+          <div class="w-25 btn-group">
+            <button class="border-0 bg-transparent text-light">
+              <i class="far fa-trash-alt delete p-1"></i>
+            </button>
+            <button class="border-0 bg-transparent text-light">
+              <i class="fa-solid fa-check toggle done p-1"></i>
+              <i
+                class="fa-sharp fa-solid fa-rotate-left toggle undo visually-hidden p-1"
+              ></i>
+            </button>
+            <button
+              class="border-0 bg-transparent text-light"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              <i class="fa-solid fa-pen-to-square edit p-1"></i>
+            </button>
+          </div>
         </li>
+
         <li
-          class="list-group-item d-flex justify-content-between align-items-center"
+          id="3"
+          class="list-group-item d-flex gap-2 justify-content-between align-items-center"
         >
-          <span>make a veggie pie</span>
-          <i class="far fa-trash-alt delete"></i>
+          <span class="w-25 titleTodo">make a veggie pie</span>
+          <span class="w-50 descriptionTodo">without description</span>
+          <div class="w-25 btn-group">
+            <button class="border-0 bg-transparent text-light">
+              <i class="far fa-trash-alt delete p-1"></i>
+            </button>
+            <button class="border-0 bg-transparent text-light">
+              <i class="fa-solid fa-check toggle done p-1"></i>
+              <i
+                class="fa-sharp fa-solid fa-rotate-left toggle undo visually-hidden p-1"
+              ></i>
+            </button>
+            <button
+              class="border-0 bg-transparent text-light"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              <i class="fa-solid fa-pen-to-square edit p-1"></i>
+            </button>
+          </div>
         </li>
       </ul>
     </div>
