@@ -4,10 +4,52 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div id="app">
+      <!-- Adding Todo Form -->
+      <form
+        class="bg-slate-400 text-left rounded-md overflow-hidden mx-3 mt-2 p-3 flex flex-col justify-center items-center gap-3 text-slate-50"
+        id="todo-form"
+      >
+        <section
+          class="flex flex-col justify-between items-center gap-2 w-10/12"
+          id="form-section"
+        >
+          <label class="w-full" for="title-input">Task title: </label>
+          <input
+            class="rounded-md h-9 bg-slate-500 p-2 focus:outline-none focus:ring-2 w-full"
+            type="text"
+            id="title-input"
+          />
+        </section>
+        <section
+          class="flex flex-col justify-between items-center gap-2 w-10/12"
+          id="form-section"
+        >
+          <label class="w-full" for="description-input"
+            >Task description:
+          </label>
+          <textarea
+            class="rounded-md h-32 w-full bg-slate-500 p-2 focus:outline-none focus:ring-2 resize-none"
+            id="description-input"
+          ></textarea>
+        </section>
+        <button
+          type="submit"
+          class="px-7 py-3 bg-slate-500 rounded-md hover:bg-slate-300 hover:text-slate-500 transition-all duration-150 active:scale-105"
+          id="submit-todo-form-btn"
+        >
+          Add task
+        </button>
+      </form>
+      <!-- Adding Todo Form -->
+      <!-- -->
+      <!-- -->
+      <!-- -->
+      <!-- -->
+    </div>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
