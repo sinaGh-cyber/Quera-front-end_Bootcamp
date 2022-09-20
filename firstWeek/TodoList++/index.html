@@ -10,7 +10,7 @@
     <div id="app">
       <!-- Toast template -->
       <template id="toast-container-template"
-        ><div id="toast-container" class="fixed top-3 z-40 right-4 "></div
+        ><div id="toast-container" class="fixed top-3 z-40 right-4"></div
       ></template>
 
       <!--  -->
@@ -26,14 +26,36 @@
       ></template>
       <!-- -->
 
+      <template id="toast-remove-success-template"
+        ><div
+          id="toast-remove-success"
+          class="bg-blue-300 cursor-pointer mt-2 min-w-[200px] min-h-[60px] p-1 text-center overflow-hidden rounded-lg flex flex-col justify-evenly"
+        >
+          <p class="text-blue-800">task removed successfully.</p>
+          <div class="w-full rounded-sm overflow-hidden bg-blue-200">
+            <div class="h-2 w-0 animate-timeup3s bg-blue-700"></div>
+          </div></div
+      ></template>
+
       <template id="toast-fail-template"
         ><div
           id="toast-fail"
           class="bg-red-300 cursor-pointer mt-2 min-w-[200px] min-h-[60px] p-1 text-center overflow-hidden rounded-lg flex flex-col justify-evenly"
         >
-          <p class="text-red-800">title is required !</p>
-          <div class="w-full rounded-sm overflow-hidden  bg-red-200">
+          <p class="text-red-800">title is required.</p>
+          <div class="w-full rounded-sm overflow-hidden bg-red-200">
             <div class="h-2 w-0 animate-timeup3s bg-red-700"></div>
+          </div></div
+      ></template>
+
+      <template id="toast-edit-success-template"
+        ><div
+          id="toast-edit-success"
+          class="bg-orange-300 cursor-pointer mt-2 min-w-[200px] min-h-[60px] p-1 text-center overflow-hidden rounded-lg flex flex-col justify-evenly"
+        >
+          <p class="text-orange-800">task edited successfully.</p>
+          <div class="w-full rounded-sm overflow-hidden bg-orange-200">
+            <div class="h-2 w-0 animate-timeup3s bg-orange-700"></div>
           </div></div
       ></template>
 
@@ -149,8 +171,12 @@
             class="task-is-done absolute top-2 right-2 bg-green-300 text-green-700 py-1 px-3 rounded-full hidden"
             >done!</span
           >
-          <h3 class="task-title w-4/5 font-bold text-lg text-ellipsis whitespace-nowrap break-normal overflow-hidden "></h3>
-          <p class="task-description w-11/12 mt-2 text-ellipsis break-words line-clamp-5"></p>
+          <h3
+            class="task-title w-4/5 font-bold text-lg text-ellipsis whitespace-nowrap break-normal overflow-hidden"
+          ></h3>
+          <p
+            class="task-description w-11/12 mt-2 text-ellipsis break-words line-clamp-5"
+          ></p>
           <div class="task-button-group mt-3 flex gap-5 justify-center">
             <button
               class="task-do-btn bg-green-300 text-green-700 rounded-md py-1 px-3 hover:bg-green-400 hover:text-green-800 transition-colors duration-200"
