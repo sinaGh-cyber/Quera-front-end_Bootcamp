@@ -4,11 +4,51 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
+    <title>Vite + TS</title></head
+  ><template id="shade-box-template"
+    ><div
+      class="shade-box bg-red-50 flex flex-col items-center justify-center p-2 min-h-[200px]"
+    >
+      <p class="weight"></p>
+      <p class="hex-code"></p></div
+  ></template>
   <body>
-    <div id="app">
-      
+    <div
+      id="app"
+      class="w-screen min-h-screen flex flex-col bg-slate-200 overflow-y-auto"
+    >
+      <main class="">
+        <form
+          id="color-form"
+          class="flex gap-5 mt-2 ml-2 items-center text-gray-700"
+        >
+          <label class="" for="hexInput">Color Generator : </label>
+          <div>
+            <input
+              id="hexInput"
+              class="px-2 py-1 ring-2 ring-blue-400 rounded-md focus:outline-none focus:ring-4 transition-colors duration-150"
+              type="text"
+            />
+            <button
+              id="color-submit-btn"
+              class="text-white bg-blue-400 px-2 py-1 rounded-md hover:bg-blue-500 ml-1"
+              type="submit"
+            >
+              submit
+            </button>
+          </div>
+          <p
+            id="error-message"
+            class="px-2 py-1 bg-red-200 text-red-800 rounded-md hidden"
+          >
+            value must be valid hex code!
+          </p>
+        </form>
+        <section
+          id="shade-box-container"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mx-2 mt-2 p-2 rounded-md bg-slate-300"
+        ></section>
+      </main>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
