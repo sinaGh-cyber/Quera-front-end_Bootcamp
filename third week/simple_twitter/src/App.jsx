@@ -17,12 +17,15 @@ import Thread from './Pages/Thread/thread';
 import Search from './Pages/Search/search';
 import TweetModal from './modules/tweetModal/tweetModal';
 import { httpRequest } from './services/httpRequest';
+import Followings from './Pages/Profile/Followings/followings';
+import Followers from './Pages/Profile/Followers/followers';
+import TweetList from './modules/tweetList/tweetList';
 
 function App() {
   const isTweetModalActive = useSelector(
     (state) => state.tweet.isTweetModalActive
   );
-  
+
   return (
     <div className="flex relative flex-col w-screen min-h-screen bg-gray-ExtraExtraLight">
       {isTweetModalActive && <TweetModal />}
@@ -49,9 +52,9 @@ function App() {
           key="0"
         />
         <Route
-          path={'/thread/:threadId'}
+          path={'/thread/:tweetId'}
           element={
-            <Protected path="/thread/:threadId">
+            <Protected path="/thread/:tweetId">
               <Thread />
             </Protected>
           }
@@ -65,7 +68,11 @@ function App() {
             </Protected>
           }
           key="2"
-        />
+        >
+          <Route path={'followings'} element={<Followings />} key="21" />
+          <Route path={'followers'} element={<Followers />} key="22" />
+          <Route path={'tweets'} element={<TweetList />} key="23" />
+        </Route>
         <Route path={'/login'} element={<Login />} key="3" />
         <Route path={'/sign-up'} element={<SignUp />} key="4" />
         <Route path={'*'} element={<NotFound />} key="5" />{' '}
