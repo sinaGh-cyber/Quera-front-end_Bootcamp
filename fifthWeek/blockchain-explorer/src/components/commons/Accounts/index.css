@@ -1,0 +1,21 @@
+.suspendedTransaction{
+    background-color: rgb(249, 185, 185) !important;
+}
+.suspendedTransaction p {
+    color: rgb(105, 17, 17) !important;
+}
+
+.suspendedTransaction span {
+    background-color: red !important;
+}
+
+.validTransaction{
+    background-color: rgb(185, 255, 185) !important;
+}
+.validTransaction p {
+    color: rgb(16, 66, 16) !important;
+}
+
+.validTransaction span {
+    background-color: green !important;
+}
